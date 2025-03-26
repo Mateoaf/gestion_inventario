@@ -1,3 +1,5 @@
+// build.gradle.kts (a nivel de proyecto)
+
 allprojects {
     repositories {
         google()
@@ -5,8 +7,9 @@ allprojects {
     }
 }
 
-val newBuildDir: Directory = rootProject.layout.buildDirectory.dir("../../build").get()
-rootProject.layout.buildDirectory.value(newBuildDir)
+// Ajuste del directorio de construcción
+val newBuildDir = rootProject.layout.buildDirectory.dir("../../build").get()
+rootProject.layout.buildDirectory.set(newBuildDir)
 
 subprojects {
     val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
@@ -16,6 +19,7 @@ subprojects {
     project.evaluationDependsOn(":app")
 }
 
+// Tarea de limpieza
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }

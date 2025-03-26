@@ -18,6 +18,7 @@ class MainApp extends StatelessWidget {
     final providers = [EmailAuthProvider()];
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       initialRoute:
           FirebaseAuth.instance.currentUser == null ? '/sign-in' : '/profile',
       routes: {

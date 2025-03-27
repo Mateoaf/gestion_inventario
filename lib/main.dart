@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:gestion_inventario/firebase_options.dart';
-import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
-import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+import 'package:gestion_inventario/screens/home/home_screen.dart';
+import 'screens/auth/login_screen.dart'; // importa el nuevo archivo
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,36 +16,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final providers = [EmailAuthProvider()];
-
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       initialRoute:
           FirebaseAuth.instance.currentUser == null ? '/sign-in' : '/profile',
       routes: {
-        '/sign-in': (context) {
-          return SignInScreen(
-            providers: providers,
-            actions: [
-              AuthStateChangeAction<UserCreated>((context, state) {
-                // Put any new user logic here
-                Navigator.pushReplacementNamed(context, '/profile');
-              }),
-              AuthStateChangeAction<SignedIn>((context, state) {
-                Navigator.pushReplacementNamed(context, '/profile');
-              }),
-            ],
-          );
-        },
-        '/profile': (context) {
-          return ProfileScreen(
-            providers: providers,
-            actions: [
-              SignedOutAction((context) {
-                Navigator.pushReplacementNamed(context, '/sign-in');
-              }),
-            ],
-          );
-        },
+        '/sign-in': (context) => const LoginScreen(),
+        '/profile': (context) => const ProfileScreenWrapper(),
+        '/home': (context) => const HomeScreen(), //
       },
     );
   }

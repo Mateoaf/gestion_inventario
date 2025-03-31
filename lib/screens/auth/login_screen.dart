@@ -48,16 +48,16 @@ class ProfileScreenWrapper extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: ElevatedButton.icon(
-              icon: const Icon(Icons.home),
-              label: const Text('Ir al menú principal'),
-              onPressed: () {
-                Navigator.pushNamed(context, '/home');
-              },
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ElevatedButton.icon(
+                icon: const Icon(Icons.home),
+                label: const Text('Ir al menú principal'),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/home');
+                },
+              ),
             ),
-          ),
         ],
       ),
     );

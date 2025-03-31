@@ -59,11 +59,11 @@ class ProductCard extends StatelessWidget {
                       size: 28.0,
                     ),
                     onPressed: () {
-                      /*Navigator.pushNamed(
+                      Navigator.pushNamed(
                         context,
-                        '/editarProducto',
+                        '/EditProduct',
                         arguments: product,
-                      );*/
+                      );
                     },
                   ),
                   IconButton(

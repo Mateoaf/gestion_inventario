@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:gestion_inventario/firebase_options.dart';
 import 'package:gestion_inventario/screens/home/home_screen.dart';
+import 'package:gestion_inventario/screens/products/edit_product_screen.dart';
 import 'package:gestion_inventario/screens/products/product_details_screen.dart';
 import 'screens/auth/login_screen.dart'; // importa el nuevo archivo
 
@@ -26,6 +27,7 @@ class MainApp extends StatelessWidget {
         '/profile': (context) => const ProfileScreenWrapper(),
         '/home': (context) => const HomeScreen(), //
         '/productDetails': (context) => ProductoPage(),
+        '/EditProduct': (context) => EditProductScreen(),
       },
     );
   }

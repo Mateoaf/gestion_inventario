@@ -18,7 +18,7 @@ class Header extends StatelessWidget {
           size: 35,  //Tamaño del icono
         ),
         onPressed: () {
-          //Navigator.pushNamed(context, '/perfilUsuario'); // Redirige a la página de perfil
+          Navigator.pushNamed(context, '/profile'); // Redirige a la página de perfil
         },
       ),
       title: const Text(  //Titulo 

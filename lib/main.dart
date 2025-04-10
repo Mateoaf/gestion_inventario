@@ -24,7 +24,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme( selectedColor: 1).theme(),
-      initialRoute: FirebaseAuth.instance.currentUser == null ? '/sign-in' : '/profile',
+      initialRoute: FirebaseAuth.instance.currentUser == null ? '/sign-in' : '/home',
       routes: {
         '/sign-in': (context) => const LoginScreen(),
         '/profile': (context) => const ProfileScreenWrapper(),

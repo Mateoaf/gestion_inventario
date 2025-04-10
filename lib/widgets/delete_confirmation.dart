@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 /// Muestra un cuadro de diálogo para confirmar la eliminación de un artículo.
 void showDeleteConfirmation(BuildContext context, Function onDelete) {
@@ -29,4 +29,4 @@ void showDeleteConfirmation(BuildContext context, Function onDelete) {
       );
     },
   );
-}
+} */

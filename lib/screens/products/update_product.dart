@@ -73,23 +73,43 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
                 children: [
                   TextField(
                     controller: _nameController,
-                    decoration: const InputDecoration(labelText: 'Nombre de artículo'),
+                    decoration: InputDecoration(
+                      labelText: 'Nombre de artículo',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0) 
+                      ), 
+                      ),
                   ),
                   const SizedBox(height: 20),
                   TextField(
                     controller: _descriptionController,
-                    decoration: const InputDecoration(labelText: 'Descripción'),
+                    decoration:  InputDecoration(
+                      labelText: 'Descripción',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0) 
+                      ), 
+                      ),
                   ),
                   const SizedBox(height: 20),
                   TextField(
                     controller: _stockController,
-                    decoration: const InputDecoration(labelText: 'Cantidad de stock'),
+                    decoration: InputDecoration(
+                      labelText: 'Cantidad de stock',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0) 
+                      ), 
+                      ),
                     keyboardType: TextInputType.number,
                   ),
                   const SizedBox(height: 20),
                   TextField(
                     controller: _priceController,
-                    decoration: const InputDecoration(labelText: 'Precio'),
+                    decoration: InputDecoration(
+                      labelText: 'Precio',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0) 
+                      ), 
+                      ),
                     keyboardType: TextInputType.number,
                   ),
                   const SizedBox(height: 20),

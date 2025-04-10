@@ -23,9 +23,9 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
   // Función para agregar producto
   void _addProduct() async {
-    if (_nameController.text.isEmpty || _selectedCategory.isEmpty) {
+    if (_nameController.text.isEmpty || _selectedCategory.isEmpty || _stockController.text.isEmpty || _priceController.text.isEmpty || _descriptionController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("El nombre y la categoría son obligatorios")),
+        const SnackBar(content: Text("Todos los campos son obligatorios")),
       );
       return;
     }
@@ -67,13 +67,25 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   // Campo para ingresar el nombre
                   TextField(
                     controller: _nameController,
-                    decoration: const InputDecoration(labelText: 'Nombre del producto'),
+                    decoration: InputDecoration(
+                      labelText: 'Nombre del producto', 
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0) 
+                      ), 
+                      
+                      ),
                   ),
                   const SizedBox(height: 20),
                   // Campo para ingresar la descripción
                   TextField(
                     controller: _descriptionController,
-                    decoration: const InputDecoration(labelText: 'Descripción'),
+                    decoration: InputDecoration(
+                      labelText: 'Descripción',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0) 
+                      ), 
+
+                      ),
                   ),
                   const SizedBox(height: 20),
                   // Dropdown para seleccionar la categoría
@@ -97,14 +109,24 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   // Campo para la cantidad en stock
                   TextField(
                     controller: _stockController,
-                    decoration: const InputDecoration(labelText: 'Cantidad en stock'),
+                    decoration: InputDecoration(
+                      labelText: 'Cantidad en stock',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0) 
+                      ), 
+                      ),
                     keyboardType: TextInputType.number,
                   ),
                   const SizedBox(height: 20),
                   // Campo para el precio
                   TextField(
                     controller: _priceController,
-                    decoration: const InputDecoration(labelText: 'Precio'),
+                    decoration:  InputDecoration(
+                      labelText: 'Precio',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0) 
+                      ), 
+                      ),
                     keyboardType: TextInputType.number,
                   ),
                   const SizedBox(height: 20),
